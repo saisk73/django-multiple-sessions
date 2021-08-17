@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <form class="p-5" action="/login" method="post">
+        <h1>Admin Email: {{ admin }}</h1>
+        <h1>User Email: {{ user }}</h1>
+        {% csrf_token %}
+        <select name="role" id="role" class="form-select">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <input type="email" class="form-control mt-4" name="email">
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+</body>
+
+</html>
